@@ -6,7 +6,6 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
-import { NavLink } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -39,22 +38,20 @@ export default function ProductCard({ product, showDescription, addToCart }) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} role="button">
       <CardHeader title={product.name} />
       <CardMedia className={classes.media} image={product.imageUrl} title={product.Name} />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           <div>Price:{product?.price}</div>
-          <div>
-            <Button variant="outlined" color="primary" onClick={() => addToCart(product?.id)}>
-              Add To Cart
-            </Button>
-          </div>
-          {showDescription ? (
-            product?.description
-          ) : (
-            <NavLink to={`/product/${product.id}`}>Click Here to view details</NavLink>
+          {addToCart && (
+            <div>
+              <Button variant="outlined" color="primary" onClick={() => addToCart(product?.id)}>
+                Add To Cart
+              </Button>
+            </div>
           )}
+          {showDescription && product?.description}
         </Typography>
       </CardContent>
     </Card>

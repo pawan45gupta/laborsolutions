@@ -56,6 +56,36 @@ function App() {
       description: "Samsung Mobile Phone at $300 only",
       price: "$300.00",
     },
+    {
+      id: 6,
+      name: "RealMe Mobile Phone",
+      imageUrl: "https://dhlm2eb86cbhs.cloudfront.net/public/thumbs/products/16791/lava_0_80.webp",
+      description: "RealMe Mobile Phone at $100 only",
+      price: "$100.00",
+    },
+    {
+      id: 7,
+      name: "RealMe Mobile Phone 12Pro",
+      imageUrl: "https://dhlm2eb86cbhs.cloudfront.net/public/thumbs/products/16791/lava_0_80.webp",
+      description: "RealMe Mobile Phone at $150 only",
+      price: "$150.00",
+    },
+    {
+      id: 8,
+      name: "Samsung Mobile Phone A12",
+      imageUrl:
+        "https://www.91-img.com/gallery_images_uploads/0/c/0c9a14b183ba9875649ee174ee01e9c4fcc4f6d8.jpeg?tr=h-550,w-0,c-at_max",
+      description: "Samsung Mobile Phone at $250 only",
+      price: "$250.00",
+    },
+    {
+      id: 9,
+      name: "Tourist Bag Pack",
+      imageUrl:
+        "http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/enduro-boa-hydration-pack-AJQZ_JK3_hero.png",
+      description: "Tourist Bag Pack for suitable journey at $70 only",
+      price: "$70.00",
+    },
   ];
 
   function renderProducts(routerProps) {

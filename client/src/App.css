@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: aliceblue;
 }
 
 .App-logo {
@@ -42,6 +43,15 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 10px;
+}
+
+.product-container-pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .product {

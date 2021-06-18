@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Card from "./Card";
 import PrimarySearchAppBar from "./PrimarySearchAppBar";
+import Pagination from "@material-ui/lab/Pagination";
+import PopperPopupState from "./Popper";
 
 const Home = ({ products }) => {
   const [productData, setProductData] = useState(products);
@@ -17,16 +18,22 @@ const Home = ({ products }) => {
   const addToCart = (id) => {
     setCartItems([...cartItems, id]);
   };
+  const [page, setPage] = useState(1);
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
   return (
     <div>
-      {/* <NavLink to="/"> Home </NavLink> */}
       <PrimarySearchAppBar products={products} onSearch={onSearch} cartItems={cartItems} />
       <div className="product-container">
         {productData?.map((product) => (
           <div className="product">
-            <Card product={product} addToCart={addToCart} />
+            <PopperPopupState product={product} addToCart={addToCart} />
           </div>
         ))}
+      </div>
+      <div className="product-container-pagination">
+        <Pagination count={10} page={page} onChange={handleChange} />
       </div>
     </div>
   );
